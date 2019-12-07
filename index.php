@@ -4,6 +4,9 @@
         <meta charset="utf-8"><meta http-equiv="Content-Type">
         <title> Počasí | Teplota, tlak, vlhkost</title>
         <link rel="stylesheet" type="text/css" href="./style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+  <script src="thermometer.js"></script>
 
     </head>
     <body>
@@ -11,65 +14,52 @@
 <div class="app">
     <table class="center">
       <tbody>
-        <tr>
-          <th colspan="2"> 
-            Teplota
-          </th>
+        <tr><th colspan="2"> Teplota</th></tr>
+        <tr> <td colspan="2">
+              <span id="temp"> Načítám.. </span>
+            </td>
         </tr>
-        <tr> 
-          <td colspan="2">
-            <div id="temp"></div>
-           20 &#8451
-          </td>
+        <tr><th width="50%"> Tlak</th><th width="50%"> Vlhkost</th>
         </tr>
-
-        <tr>
-          <th width="50%"> 
-            Tlak
-          </th>
-          <th width="50%"> 
-            Vlhkost
-          </th>
-        </tr>
-          <td >
-            <div id="pressure"></div>
-           20 hPa
-          </td>
-          <td colspan="2">
-            <div id="humidity"></div>
-           20 %
-          </td>
+        <td ><span id="pressure"> Načítám.. </span></td>
+          <td colspan="2"><span id="humidity"> Načítám.. </span></td>
         <tr>
 
         </tr>
       </tbody>
     </table>
+    <h3>Aktualizuji každé 3 sekundy</h3>
 </div>
 
 
 <div class="podekovani">
-  <p>Vytvořil: <a href="#"> Zdeněk Grůza </a>, <a href="#"> Lukáš Hanák </a> </p>
+  <p>Vytvořil: <a href="https://github.com/zgruza" target="_blank"> Zdeněk Grůza </a>, <a href="https://github.com/lukashanak" target="_blank"> Lukáš Hanák </a> </p>
   <p> Učitel: <a href="#">Ing. Petr Minařík </a> </p>
 </div>
 
-        <script src="script.js"></script>
     </body>
 
 <script>
-  setInterval(function(){GetData();}, 10000);
+  setInterval(
+    function(){
+      GetData();
+    }
+  , 3000);
+
 function GetData(){
+  //console.log("Aktualizovano");
   $.ajax(
   'request.php',
-  {
+ {
       success: function(data) {
         var DATA = jQuery.parseJSON(data) //json_decode(data, true );
-        $('#temp').html(DATA.temp);
-        $('#pressure').html(DATA.pressure);
-        $('#humidity').html(DATA.humidity);
+       $('#temp').html((DATA.temp).toFixed(2) + "  &#8451;");
+       $('#pressure').html(DATA.pressure + " hPa");
+        $('#humidity').html(DATA.humidity + " %");
       },
       error: function() {
         alert('God Damn Error');
-      }
+     }
    }
   );
 }
