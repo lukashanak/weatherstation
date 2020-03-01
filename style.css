@@ -37,7 +37,9 @@ td {
   background-color: rgb(153, 204, 255);
 }
 
-
+.data-table {
+  margin-bottom: 50px;
+}
 
 
 /* footer */
