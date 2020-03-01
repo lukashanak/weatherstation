@@ -4,16 +4,19 @@ void setup(){
 
 void loop(){
 
-unsigned int AnalogValue;
+int AnalogValue;
 AnalogValue = analogRead(A0);
-Serial.println(AnalogValue);
-  
+
   if (digitalRead(2) == HIGH) {
-    Serial.println("Neprsi");
+    Serial.println(false);
+    Serial.println(AnalogValue);
+    for(int i=0; i < 2; i++){
+      
+    }
   }
   else {
-    Serial.println("Prsi");
+    Serial.println(true);
+    Serial.println(AnalogValue);
   }
-
   delay(3000);
 }
