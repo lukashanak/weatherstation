@@ -13,7 +13,9 @@ function GetData(){
         var DATA = jQuery.parseJSON(data) //json_decode(data, true );
        $('#temp').html((DATA.temp).toFixed(2) + "  &#8451;");
        $('#pressure').html(DATA.pressure + " hPa");
-        $('#humidity').html(DATA.humidity + " %");
+       $('#humidity').html(DATA.humidity + " %");
+       $('#light').html(DATA.light);
+       $('#rain').html(DATA.rain);
       },
       error: function() {
         alert('God Damn Error');

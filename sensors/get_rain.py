@@ -6,4 +6,8 @@ while 1:
         line = int(ser.readline())
         if line < 2:
             print(line)
+            #if line == 1:
+                #print("Ano")
+            #else:
+                #print("Ne")
             sys.exit()
