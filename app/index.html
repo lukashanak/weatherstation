@@ -8,16 +8,31 @@
   <link rel="stylesheet" type="text/css" href="./style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Notable&family=Roboto+Mono:wght@500&display=swap"
+    rel="stylesheet">
+
   <!-- <script src="./main.js"></script> -->
 </head>
 
 
 <body>
   <div class="app">
-
+    <div id="location container">
+      <p class="title text-center">Počasí Klobouky u Brna <a
+          href="https://www.google.com/maps/place/691+72+Klobouky+u+Brna/@48.9999477,16.8232578,13z/data=!3m1!4b1!4m5!3m4!1s0x4712dba0fd20eee9:0x400af0f66153630!8m2!3d48.9950116!4d16.8595188"
+          title="Kliknipro zobrazeni na mapě" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a></p>
+    </div>
+    <div class="temperature container">
+      <p class="sub-title text-center">Teplota</p>
+      <p class="actual-value text-center"> <span id="actualValueTemperature">0</span>°C</p>
+      <p class="text-center show-graph"> ZOBRAZIT GRAF</p>
+    </div>
   </div>
   <div class="podekovani">
-    <p>Vytvořil: <a href="https://github.com/zgruza" target="_blank"> Zdeněk Grůza </a>, <a href="https://github.com/lukashanak" target="_blank"> Lukáš Hanák </a> </p>
+    <p>Vytvořil: <a href="https://github.com/zgruza" target="_blank"> Zdeněk Grůza </a>, <a
+        href="https://github.com/lukashanak" target="_blank"> Lukáš Hanáks </a> </p>
     <p> Učitel: <a href="#">Ing. Petr Minařík </a> </p>
   </div>
 </body>

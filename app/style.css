@@ -10,6 +10,67 @@ body {
   background-attachment: fixed;
 }
 
+#app {
+
+}
+
+.image {
+  margin: auto;
+}
+
+.container {
+  margin-bottom: 50px;
+  width: 550px;
+  margin: auto;
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.title, .sub-title {
+  font-family: 'Cinzel', serif;
+}
+
+.actual-value {
+  font-family: 'Notable', sans-serif;
+font-family: 'Roboto Mono', monospace;
+}
+
+.title {
+  color: white;
+  font-size: 55px;
+  margin-right: 30%;
+  margin-left: 30%;
+  border-bottom: 1px solid black;
+}
+
+.title * {
+  font-size: 55px;
+}
+
+.sub-title {
+  font-size: 35px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.show-graph {
+  text-decoration: underline;
+  font-size: 15px;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.actual-value {
+  color: red;
+  font-size: 35px;
+  margin-top: 0px;
+}
+
 /* footer */
 .podekovani {
    position: fixed;
