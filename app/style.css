@@ -1,46 +1,14 @@
+html {
+  height: 100%;
+}
+
 body {
-    background-color: #FE9800;
-    text-decoration: none;
-    text-align: center;
+  height: 100%;
+  background: linear-gradient(to bottom, #0099ff 0%, #99ccff 100%);
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-
-
-.app {
-  margin-top: 35px;
-}
-
-.center {
-  margin: 1px auto;
-  width: 30%;
-  padding: 1px;
-}
-
-
-table {
-  font-size: 30px;
-}
-
-table, td {
-    border: 1px solid black;
-}
-
-table, th, td {
-  border-radius: 3px;
-}
-
-th {
-  background-color: black;
-  color: white;
-}
-
-td {
-  background-color: rgb(153, 204, 255);
-}
-
-.data-table {
-  margin-bottom: 50px;
-}
-
 
 /* footer */
 .podekovani {
@@ -51,16 +19,11 @@ td {
    text-align: center;
 }
 
-
-p < .podekovani {
+.podekovani p {
   padding: 0px;
-}
-
-p {
-	text-align: center;
+  text-align: center;
   margin-bottom: 0em;
   margin-top: 0em;
-  margin-bottom: 3px;
 }
 
 a {
@@ -72,4 +35,3 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
