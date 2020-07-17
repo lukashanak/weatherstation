@@ -12,8 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Notable&family=Roboto+Mono:wght@500&display=swap"
     rel="stylesheet">
-
-  <!-- <script src="./main.js"></script> -->
 </head>
 
 
@@ -27,7 +25,10 @@
     <div class="temperature container">
       <p class="sub-title text-center">Teplota</p>
       <p class="actual-value text-center"> <span id="actualValueTemperature">0</span>°C</p>
-      <p class="text-center show-graph"> ZOBRAZIT GRAF</p>
+      <p class="text-center show-graph" id="showGraphTemperature"> ZOBRAZIT GRAF</p>
+      <div id="temperatureGraph">
+        
+      </div>
     </div>
   </div>
   <div class="podekovani">
@@ -40,5 +41,7 @@
 
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="./main.js"></script>
 
 </html>
