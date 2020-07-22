@@ -20,11 +20,19 @@ body {
 
 .container {
   margin-bottom: 50px;
-  width: 550px;
+  width: 950px;
   margin: auto;
   background-color: white;
   color: black;
   border-radius: 5px;
+}
+
+.selection {
+  display: block;
+  margin: auto; 
+  margin-bottom: 10px;
+  padding: 7px;
+  font-size: 20px;
 }
 
 .text-center {
@@ -73,7 +81,6 @@ font-family: 'Roboto Mono', monospace;
 
 /* footer */
 .podekovani {
-   position: fixed;
    left: 0;
    bottom: 0;
    width: 100%;

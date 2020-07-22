@@ -17,19 +17,73 @@
 
 <body>
   <div class="app">
-    <div id="location container">
+    <div id="container location">
       <p class="title text-center">Počasí Klobouky u Brna <a
           href="https://www.google.com/maps/place/691+72+Klobouky+u+Brna/@48.9999477,16.8232578,13z/data=!3m1!4b1!4m5!3m4!1s0x4712dba0fd20eee9:0x400af0f66153630!8m2!3d48.9950116!4d16.8595188"
           title="Kliknipro zobrazeni na mapě" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a></p>
     </div>
 
-    <div class="temperature container">
+    <div class="container" id="temperature">
       <p class="sub-title text-center">Teplota</p>
       <p class="actual-value text-center"> <span id="actualValueTemperature">0</span>°C</p>
+      <select class="selection" id="temperatureGraphSelection">
+        <option value="day">Posledních 24h</option>
+        <option value="week">Posledný týden</option>
+        <option value="month">Poslední měsíc</option>
+      </select>
       <div id="temperatureGraph">
-
       </div>
     </div>
+
+<!--
+    <div class="container" id="pressure">
+      <p class="sub-title text-center">Atmosférický tlak</p>
+      <p class="actual-value text-center"> <span id="actualValuePressure">0</span>hPa</p>
+      <select class="selection" id="pressureGraphSelection">
+        <option value="day">Posledních 24h</option>
+        <option value="week">Posledný týden</option>
+        <option value="month">Poslední měsíc</option>
+      </select>
+      <div id="pressureGraph">
+      </div>
+    </div>
+
+    <div class="container" id="humidity">
+      <p class="sub-title text-center">Vlhkost vzduchu </p>
+      <p class="actual-value text-center"> <span id="actualValueHumidity">0-100</span>%</p>
+      <select class="selection" id="humidityGraphSelection">
+        <option value="day">Posledních 24h</option>
+        <option value="week">Posledný týden</option>
+        <option value="month">Poslední měsíc</option>
+      </select>
+      <div id="humidityGraph">
+      </div>
+    </div>
+
+    <div class="container" id="rain">
+      <p class="sub-title text-center"> Déšť </p>
+      <p class="actual-value text-center">Prší: <span id="actualValueRain"> Ano / Ne</span></p>
+      <select class="selection" id="temperatureGraphSelection">
+        <option value="day">Posledních 24h</option>
+        <option value="week">Posledný týden</option>
+        <option value="month">Poslední měsíc</option>
+      </select>
+      <div id="rainGraph">
+      </div>
+    </div>
+
+    <div class="container" id="light-sens">
+      <p class="sub-title text-center">Sensitivita světla</p>
+      <p class="actual-value text-center"> <span id="actualValueLightSens">0-1000</span>lx</p>
+      <select class="selection" id="lightSensGraphSelection">
+        <option value="day">Posledních 24h</option>
+        <option value="week">Posledný týden</option>
+        <option value="month">Poslední měsíc</option>
+      </select>
+      <div id="temperatureLightSens">
+      </div>
+    </div>
+    -->
 
   </div>
   <div class="podekovani">

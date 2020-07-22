@@ -30,15 +30,15 @@ function GetData(){
 
 
 // TEMPERATURE
-const showGraphTemperature = document.getElementById("showGraphTemperature");
 const tepmeratureGraph = document.getElementById("temperatureGraph")
 
 
-var options = {
+var temperatureDay = {
   colors:['#F44336'],
   title: {
     text: 'Graf teploty za posledních 24 hodin',
-    align: 'center'
+    align: 'center',
+    show: 'false'
   },
   tools: {
     download: false
@@ -53,12 +53,12 @@ var options = {
   }
   },
   series: [{
-    name: 'Teplota',
+    name: 'Teplota (°C)',
     data: ["3°C", "35C", "0C", "5C", "10C", "15C", "20C", "30C", "18C", "20C", "14C", "3°C", "35C", "0C", "5C", "10C", "15C", "20C", "30C", "18C", "20C", "14C", "15C", "0C"]
   }],
   xaxis: {
     labels: {
-      show: false
+      show: true
   },
   categories: ["1:00 hod.", "2:00 hod.", "3:00 hod.", "4:00 hod.", "5:00 hod.", "6:00 hod.", "7:00 hod.", "8:00 hod.", "9:00 hod.", "10:00 hod.", "11:00 hod.", "12:00 hod.", "13:00 hod.", "14:00 hod.", "15:00 hod.", "16:00 hod.", "17:00 hod.", "18:00 hod.", "19:00 hod.", "20:00 hod.", "21:00 hod.", "22:00 hod.", "23:00 hod.", "24:00 hod."],
 }
