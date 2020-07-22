@@ -32,16 +32,6 @@ function GetData(){
 // TEMPERATURE
 const showGraphTemperature = document.getElementById("showGraphTemperature");
 const tepmeratureGraph = document.getElementById("temperatureGraph")
-showGraphTemperature.style.display="none";  // TEMPORALY DISABLED
-
-showGraphTemperature.addEventListener("click", ()=>{
-  if (tepmeratureGraph.style.display==="none") {
-  tepmeratureGraph.style.display="";
-  }
-  else {
-    tepmeratureGraph.style.display="none"
-  }
-})
 
 
 var options = {
