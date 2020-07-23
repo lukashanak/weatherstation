@@ -27,12 +27,13 @@
       <p class="sub-title text-center">Teplota</p>
       <p class="actual-value text-center"> <span id="actualValueTemperature">0</span>°C</p>
       <select class="selection" id="temperatureGraphSelection">
-        <option value="day">Posledních 24h</option>
-        <option value="week">Posledný týden</option>
-        <option value="month">Poslední měsíc</option>
+        <option value="dailyChartOption">Posledních 24h</option>
+        <option value="weeklyChartOption">Posledný týden</option>
+        <option value="monthlyChartOption">Poslední měsíc</option>
       </select>
-      <div id="temperatureGraph">
-      </div>
+      <div id="dailyChart"></div>
+      <div id="weeklyChart"></div>
+      <div id="monthlyChart"></div>
     </div>
 
 <!--
