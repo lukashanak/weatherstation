@@ -30,24 +30,24 @@ function GetData(){
 
 
 // TEMPERATURE
-const dailyChart = document.getElementById("dailyChart");
-const weeklyChart = document.getElementById("weeklyChart");
-const monthlyChart = document.getElementById("monthlyChart");
+const dailyChartTemp = document.getElementById("dailyChartTemp");
+const weeklyChartTemp = document.getElementById("weeklyChartTemp");
+const monthlyChartTemp= document.getElementById("monthlyChartTemp");
 
-let dailyChartData = {
+let dailyChartDataTemp = {
   data: ["3°C", "35C", "0C", "5C", "10C", "15C", "20C", "30C", "18C", "20C", "14C", "3°C", "35C", "0C", "5C", "10C", "15C", "20C", "30C", "18C", "20C", "14C", "15C", "0C"], // get from the request to php
   categories: ["1:00 hod.", "2:00 hod.", "3:00 hod.", "4:00 hod.", "5:00 hod.", "6:00 hod.", "7:00 hod.", "8:00 hod.", "9:00 hod.", "10:00 hod.", "11:00 hod.", "12:00 hod.", "13:00 hod.", "14:00 hod.", "15:00 hod.", "16:00 hod.", "17:00 hod.", "18:00 hod.", "19:00 hod.", "20:00 hod.", "21:00 hod.", "22:00 hod.", "23:00 hod.", "24:00 hod."]     // get from the request to php
 };
-let weeklyChartData = {
+let weeklyChartDataTemp = {
   data: ["3°C", "35C", "0C", "5C", "10C", "15C", "20C", "30C", "18C", "20C", "14C", "3°C", "35C", "0C", "5C", "10C", "15C", "20C", "30C", "18C", "20C", "14C", "15C", "0C"],  // get from the request to php
   categories: ["1:00 hod.", "2:00 hod.", "3:00 hod.", "4:00 hod.", "5:00 hod.", "6:00 hod.", "7:00 hod.", "8:00 hod.", "9:00 hod.", "10:00 hod.", "11:00 hod.", "12:00 hod.", "13:00 hod.", "14:00 hod.", "15:00 hod.", "16:00 hod.", "17:00 hod.", "18:00 hod.", "19:00 hod.", "20:00 hod.", "21:00 hod.", "22:00 hod.", "23:00 hod.", "24:00 hod."]      // get from the request to php
 };
-let monthlyChartData = {
+let monthlyChartDataTemp = {
   data: ["3°C", "35C", "0C", "5C", "10C", "15C", "20C", "30C", "18C", "20C", "14C", "3°C", "35C", "0C", "5C", "10C", "15C", "20C", "30C", "18C", "20C", "14C", "15C", "0C"],  // get from the request to php
   categories: ["1:00 hod.", "2:00 hod.", "3:00 hod.", "4:00 hod.", "5:00 hod.", "6:00 hod.", "7:00 hod.", "8:00 hod.", "9:00 hod.", "10:00 hod.", "11:00 hod.", "12:00 hod.", "13:00 hod.", "14:00 hod.", "15:00 hod.", "16:00 hod.", "17:00 hod.", "18:00 hod.", "19:00 hod.", "20:00 hod.", "21:00 hod.", "22:00 hod.", "23:00 hod.", "24:00 hod."]      // get from the request to php
 }; 
 
-var dailyChartDataOptions = {
+var dailyChartDataOptionsTemp = {
   colors:['#F44336'],
   title: {
     text: 'Graf teploty za posledních 24 hodin',
@@ -68,17 +68,17 @@ var dailyChartDataOptions = {
   },
   series: [{
     name: 'Teplota (°C)',
-    data: dailyChartData.data
+    data: dailyChartDataTemp.data
   }],
   xaxis: {
     labels: {
       show: true
   },
-  categories: dailyChartData.categories
+  categories: dailyChartDataTemp.categories
 }
 }
 
-var weeklyChartDataOptions = {
+var weeklyChartDataOptionsTemp = {
   colors:['#F44336'],
   title: {
     text: 'Graf teploty za posledních týden',
@@ -99,17 +99,17 @@ var weeklyChartDataOptions = {
   },
   series: [{
     name: 'Teplota (°C)',
-    data: weeklyChartData.data
+    data: weeklyChartDataTemp.data
   }],
   xaxis: {
     labels: {
       show: true
   },
-  categories: weeklyChartData.categories
+  categories: weeklyChartDataTemp.categories
 }
 }
 
-var monthlyChartDataOptions = {
+var monthlyChartDataOptionsTemp = {
   colors:['#F44336'],
   title: {
     text: 'Graf teploty za poslední měsíc',
@@ -130,24 +130,47 @@ var monthlyChartDataOptions = {
   },
   series: [{
     name: 'Teplota (°C)',
-    data: monthlyChartData.data
+    data: monthlyChartDataTemp.data
   }],
   xaxis: {
     labels: {
       show: true
   },
-  categories: monthlyChartData.categories
+  categories: monthlyChartDataTemp.categories
 }
 }
 
-var renderedDailyChart = new ApexCharts(document.querySelector("#dailyChart"), dailyChartDataOptions);
-renderedDailyChart.render();
+var renderedDailyChartTemp = new ApexCharts(document.querySelector("#dailyChartTemp"), dailyChartDataOptionsTemp);
+renderedDailyChartTemp.render();
 
-var renderedWeeklyChart = new ApexCharts(document.querySelector("#weeklyChart"), weeklyChartDataOptions);
-renderedWeeklyChart.render();
+var renderedWeeklyChartTemp = new ApexCharts(document.querySelector("#weeklyChartTemp"), weeklyChartDataOptionsTemp);
+renderedWeeklyChartTemp.render();
+
+var renderedMonthlyChartTemp = new ApexCharts(document.querySelector("#monthlyChartTemp"), monthlyChartDataOptionsTemp);
+renderedMonthlyChartTemp.render();
 
 
-var renderedMonthlyChart = new ApexCharts(document.querySelector("#monthlyChart"), monthlyChartDataOptions);
-renderedMonthlyChart.render();
+const temperatureGraphSelection = document.querySelector('#temperatureGraphSelection');
+
+temperatureGraphSelection.addEventListener('change', (event) => {
+  let selectedChart = event.target.value;
+  if (selectedChart == "dailyChartOptionTemp") {
+    dailyChartTemp.style.display="block";
+    weeklyChartTemp.style.display="none";
+    monthlyChartTemp.style.display="none"
+  }
+  else if(selectedChart == "weeklyChartOptionTemp") {
+    dailyChartTemp.style.display="none";
+    weeklyChartTemp.style.display="block";
+    monthlyChartTemp.style.display="none"
+  }
+  else if(selectedChart == "monthlyChartOptionTemp") {
+    dailyChartTemp.style.display="none";
+    weeklyChartTemp.style.display="none";
+    monthlyChartTemp.style.display="block"
+  }
+});
 
 // RAIN
+
+
