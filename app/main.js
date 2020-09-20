@@ -1,32 +1,26 @@
 
-/*
+
+getData();
+
 setInterval(
     function(){
-      GetData();
+    getData();
     }
-  , 3000);
+  , 5000);
 
-function GetData(){
-  //console.log("Aktualizovano");
-  $.ajax(
-  'request.php',
- {
-      success: function(data) {
-        var DATA = jQuery.parseJSON(data) //json_decode(data, true );
-       $('#temp').html((DATA.temp).toFixed(2) + "  &#8451;");
-       $('#pressure').html(DATA.pressure + " hPa");
-       $('#humidity').html(DATA.humidity + " %");
-       $('#light').html(DATA.light);
-       $('#rain').html(DATA.rain);
-      },
-      error: function() {
-        alert('God Damn Error');
-     }
-   }
-  );
+function getData(){
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("actualValueTemperature").innerHTML=this.responseText;
+    }
+  };
+  xhttp.open("GET", "./php/daily/tempReadLastValue.php", true);
+  xhttp.send();
+
 }
 
-*/
 
 
 // TEMPERATURE
