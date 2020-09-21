@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
       echo $arrayOfValues[$i];
       echo "\n";
   }
-  // echo round(($soucet / $delka),2);
+   echo round(($soucet / $delka),2);
 
 ?>
 
