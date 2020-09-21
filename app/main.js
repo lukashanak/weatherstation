@@ -16,7 +16,7 @@ function getData(){
       document.getElementById("actualValueTemperature").innerHTML=this.responseText;
     }
   };
-  xhttp.open("GET", "./php/daily/tempReadLastValue.php", true);
+  xhttp.open("GET", "./php/daily/printLastTempValue.php", true);
   xhttp.send();
 
 }
