@@ -1,7 +1,7 @@
 <?php
 
 function write() {
-require 'connectDailyDb.php';
+require '../config/connectTodayDb.php';
 
 $temp = round(shell_exec("sudo python ../../../getSensorValue/temp.py"), 2);
 $humidity = round(shell_exec("sudo python ../../../getSensorValue/humidity.py"), 3);
