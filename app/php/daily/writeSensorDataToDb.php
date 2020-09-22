@@ -2,11 +2,12 @@
 
 function write() {
 require 'connectDailyDb.php';
-$temp = round(shell_exec("sudo python ../../../getSensorValue/temp.py"), 3);
+
+$temp = round(shell_exec("sudo python ../../../getSensorValue/temp.py"), 2);
 $humidity = round(shell_exec("sudo python ../../../getSensorValue/humidity.py"), 3);
 $isRaining = round(shell_exec("sudo python ../../../getSensorValue/isRaining.py"), 3);
 $light = round(shell_exec("sudo python ../../../getSensorValue/light.py"), 3);
-$pressure = round(shell_exec("sudo python ../../../getSensorValue/pressure.py"), 3);
+$pressure = round(shell_exec("sudo python ../../../getSensorValue/pressure.py"), 2);
 
 $date = date('Y-m-d');
 $time = date("H:i");
@@ -37,9 +38,11 @@ echo "Light sens wrote successfully \n";
 
 // pressure
 $stmt = $conn->prepare("INSERT INTO pressure (pressure_date, pressure_time, pressure_value) VALUES (?, ?, ?)");
-$stmt->bind_param("ssd", $date, $time, $pressure);
+$stmt->bind_param("sss", $date, $time, $pressure);
 $stmt->execute();
 echo "Pressure wrote successfully \n";
+
+
 }
 
 while(true) {

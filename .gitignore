@@ -1,2 +1,3 @@
 app/php/daily/connectDailyDb.php
 app/php/pernament/connectPernamentDb.php
+app/php/pernament/test.php
