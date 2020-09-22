@@ -1,8 +1,11 @@
 <?php
-require 'connectPernamentDb.php';
+require '../daily/connectDailyDb.php';
 
-$startTime = date("H");
-$endTime = date("H")-1;
+//$startTime = date("H");
+//$endTime = date("H")-1;
+
+$startTime = '21:00:00';
+$endTime = '22:00:00';
 
 $result = mysqli_query($conn,"SELECT `temp_value` FROM `temp` WHERE temp_time BETWEEN '".$startTime."' AND '".$endTime."'");
 
