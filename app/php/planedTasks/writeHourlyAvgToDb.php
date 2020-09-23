@@ -3,13 +3,14 @@
 function getHourlyAvg() {
 require '../config/connectTodayDb.php';
 
+$startTime = (date("H")-1) . ":00:00";
+$endTime = date("H") . ":00:00";
+
 /*
-$startTime = date("H")-1;
-$endTime = date("H");
+$startTime = (date("H")) . ":00:00";
+$endTime = (date("H")+1 ). ":00:00";
 */
 
-$startTime = '12:00:00';
-$endTime = '13:00:00';
 $result = mysqli_query($conn,"SELECT AVG(temp_value) AS 'AverageTemp' FROM `temp` WHERE temp_time BETWEEN '".$startTime."' AND '".$endTime."'");
 
 if ($result->num_rows > 0) {
@@ -19,22 +20,20 @@ if ($result->num_rows > 0) {
 }
 }
 
-echo round(getHourlyAvg(),2);
 
-/*
+
 function writeToDb() {
 require '../config/connectPernamentDb.php';
-$temp = getHourlyAvg();
+$temp = round(getHourlyAvg(),2);
 $date = date('Y-m-d');
-$time = date("H:i");
+$time = date("H:00:00"); 
 
 $stmt = $conn->prepare("INSERT INTO temperature (temp_date, temp_time, temp_value) VALUES (?, ?, ?)");
-$stmt->bind_param("ssd", $date, $time, $temp);;
+$stmt->bind_param("ssd", $date, $time, $temp);
 $stmt->execute();
 echo "Temp wrote successfully \n";
-echo $temp;
 }
-*/
 
+writeToDb();
 
 ?>
