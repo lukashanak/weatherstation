@@ -17,8 +17,6 @@ if ($result->num_rows > 0) {
 }
 }
 
-
-
 function writeToDb() {
 require '../config/connectPernamentDb.php';
 
