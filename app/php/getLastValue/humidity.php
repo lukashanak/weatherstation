@@ -1,12 +1,12 @@
 <?php
-require 'connectDailyDb.php';
+require '../config/connectTodayDb.php';
 
-$sql = "SELECT humidity_value FROM humidity ORDER BY humidity_id DESC LIMIT 1";
+$sql = "SELECT value FROM humidity ORDER BY id DESC LIMIT 1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     if($row = $result->fetch_assoc()) {
-      echo $row["humidity_value"];
+      echo $row["value"];
     }
   } else {
     echo "0 results";

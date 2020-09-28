@@ -1,12 +1,12 @@
 <?php
-require 'connectDailyDb.php';
+require '../config/connectTodayDb.php';
 
-$sql = "SELECT isRaining_value FROM isRaining ORDER BY isRaining_id DESC LIMIT 1";
+$sql = "SELECT value FROM isRaining ORDER BY id DESC LIMIT 1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     if($row = $result->fetch_assoc()) {
-      echo $row["isRaining_value"];
+      echo $row["value"];
     }
   } else {
     echo "0 results";

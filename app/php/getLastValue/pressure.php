@@ -1,12 +1,12 @@
 <?php
-require 'connectDailyDb.php';
+require '../config/connectTodayDb.php';
 
-$sql = "SELECT pressure_value FROM pressure ORDER BY pressure_id DESC LIMIT 1";
+$sql = "SELECT value FROM pressure ORDER BY id DESC LIMIT 1";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     if($row = $result->fetch_assoc()) {
-      echo $row["pressure_value"];
+      echo $row["value"];
     }
   } else {
     echo "0 results";
