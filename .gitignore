@@ -2,4 +2,4 @@ app/php/daily/connectDailyDb.php
 app/php/pernament/connectPernamentDb.php
 app/php/pernament/test.php
 app/php/planedTasks/test.php
-app/php/node_modules/
+node_modules/
