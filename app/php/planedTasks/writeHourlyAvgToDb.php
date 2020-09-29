@@ -7,20 +7,20 @@ require '../config/connectTodayDb.php';
 
 $startTime = (date("H")) . ":00:00";
 $endTime = (date("H")) . ":05:00";
-
+$date = date('Y-m-d');
 
 switch ($sensor) {
   case 'temp':
-  $result = mysqli_query($conn,"SELECT AVG(value) AS 'avg' FROM `temp` WHERE time BETWEEN '".$startTime."' AND '".$endTime."'");
+  $result = mysqli_query($conn,"SELECT AVG(value) AS 'avg' FROM `temp` WHERE time BETWEEN '".$startTime."' AND '".$endTime."' AND date = '".$date."' ");
     break;
   case 'humidity':
-    $result = mysqli_query($conn,"SELECT AVG(value) AS 'avg' FROM `humidity` WHERE time BETWEEN '".$startTime."' AND '".$endTime."'");
+    $result = mysqli_query($conn,"SELECT AVG(value) AS 'avg' FROM `humidity` WHERE time BETWEEN '".$startTime."' AND '".$endTime."' AND date = '".$date."'");
     break;
   case 'pressure':
-    $result = mysqli_query($conn,"SELECT AVG(value) AS 'avg' FROM `pressure` WHERE time BETWEEN '".$startTime."' AND '".$endTime."'");
+    $result = mysqli_query($conn,"SELECT AVG(value) AS 'avg' FROM `pressure` WHERE time BETWEEN '".$startTime."' AND '".$endTime."' AND date = '".$date."'");
     break;
   case 'light':
-    $result = mysqli_query($conn,"SELECT AVG(value) AS 'avg' FROM `light` WHERE time BETWEEN '".$startTime."' AND '".$endTime."'");
+    $result = mysqli_query($conn,"SELECT AVG(value) AS 'avg' FROM `light` WHERE time BETWEEN '".$startTime."' AND '".$endTime."' AND date = '".$date."'");
     break;
 }
 
@@ -40,14 +40,9 @@ $pressure_avg_value = round(getHourlyAvg('pressure'),2);
 $light_avg_value = round(getHourlyAvg('light'),2);
 // $isRaining_avg_value is missing because it doesn't yet
 
+//$time = (date("H")) . ":00:00";
 $time = (date("H")) . ":00:00";
 $date = date('Y-m-d');
-
-if ($time == '23:00:00') {
-  $date = date_create(date("Y-m-d"));
-  date_sub($date, date_interval_create_from_date_string('1 days'));
-  $date = date_format($date, 'Y-m-d');
-}
 
 // temperature
 $stmt = $conn->prepare("INSERT INTO temp (date, time, value) VALUES (?, ?, ?)");
