@@ -50,29 +50,29 @@ if ($start_time == '23:00:00') {
 }
 
 // temperature
-$stmt = $conn->prepare("INSERT INTO temp ('date', start_time, end_time, avg_value) VALUES (?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO temp (date, start_time, end_time, avg_value) VALUES (?, ?, ?, ?)");
 $stmt->bind_param("sssd", $date, $start_time, $end_time, $temp_avg_value);
 $stmt->execute();
 echo "Temp wrote successfully \n";
 
 
 // humidity
-$stmt = $conn->prepare("INSERT INTO temp ('date', start_time, end_time, avg_value) VALUES (?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO humidity (date, start_time, end_time, avg_value) VALUES (?, ?, ?, ?)");
 $stmt->bind_param("sssd", $date, $start_time, $end_time, $humidity_avg_value);
 $stmt->execute();
-echo "Temp wrote successfully \n";
+echo "humidity wrote successfully \n";
 
 // pressure
-$stmt = $conn->prepare("INSERT INTO temp ('date', start_time, end_time, avg_value) VALUES (?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO pressure (date, start_time, end_time, avg_value) VALUES (?, ?, ?, ?)");
 $stmt->bind_param("sssd", $date, $start_time, $end_time, $pressure_avg_value);
 $stmt->execute();
-echo "Temp wrote successfully \n";
+echo "pressure wrote successfully \n";
 
 // light
-$stmt = $conn->prepare("INSERT INTO temp ('date', start_time, end_time, avg_value) VALUES (?, ?, ?, ?)");
+$stmt = $conn->prepare("INSERT INTO light (date, start_time, end_time, avg_value) VALUES (?, ?, ?, ?)");
 $stmt->bind_param("sssd", $date, $start_time, $end_time, $light_avg_value);
 $stmt->execute();
-echo "Temp wrote successfully \n";
+echo "light wrote successfully \n";
 
 
 }
