@@ -21,7 +21,20 @@ function getData(){
 
 }
 
+function getX (){
 
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("result is " + this.responseText);
+    }
+  };
+  xhttp.open("node", "./php/getJsonFromDb/today.js", true);
+  xhttp.send();
+
+}
+
+getX();
 
 // TEMPERATURE
 const dailyChartTemp = document.getElementById("dailyChartTemp");

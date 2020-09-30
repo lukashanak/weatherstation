@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lukashanak/weatherapp#readme",
   "dependencies": {
+    "moment": "^2.29.0",
     "mysql": "^2.18.1"
   }
 }
