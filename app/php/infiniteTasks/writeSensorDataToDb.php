@@ -14,7 +14,7 @@ $time = date("H:i");
 
 //  temp
 $stmt = $conn->prepare("INSERT INTO temp (date, time, value) VALUES (?, ?, ?)");
-$stmt->bind_param("ssd", $date, $time, $temp);;
+$stmt->bind_param("ssd", $date, $time, $temp);
 $stmt->execute();
 echo "Temp wrote successfully \n";
 

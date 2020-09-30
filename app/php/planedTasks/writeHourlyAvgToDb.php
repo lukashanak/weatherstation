@@ -29,6 +29,7 @@ if ($result->num_rows > 0) {
     return $row["avg"];
   }
 }
+
 }
 
 function writeToDb() {  
