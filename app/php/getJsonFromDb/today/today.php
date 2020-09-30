@@ -1,0 +1,20 @@
+<?php
+require '../../config/connectPernamentDb.php';
+
+$date = date('Y-m-d');
+$result = mysqli_query($conn,"SELECT value, time, date FROM `temp` WHERE date = '".$date."' ");
+
+$tempToday = array();
+
+if ($result->num_rows > 0) {
+  $i = 0;
+    while($row = $result->fetch_assoc()) {
+      $tempToday[$i] = ($row["value"] . ", " . $row["date"] . ", " . $row["time"]);
+      $i++;
+    }
+  }
+print_r($tempToday);
+
+$conn->close();
+
+?>
