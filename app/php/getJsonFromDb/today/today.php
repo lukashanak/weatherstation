@@ -13,7 +13,7 @@ if ($result->num_rows > 0) {
       $i++;
     }
   }
-print_r($tempToday);
+echo json_encode($tempToday);
 
 $conn->close();
 
