@@ -1,42 +1,40 @@
 
-const dailyChartTemp = document.getElementById("dailyChartTemp");
 
-let todayData = {
-    today: {
-        temp: {
-            value: "",
-            date: "",
-            time: ""
-        },
-        pressure: {
-            value: "",
-            date: "",
-            time: ""
-        }
-    }
-};
-    
-let dailyChartDataTemp = {
-    data: [], 
-    categories: []
-  };
-
-let getTempData = () => {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      console.log(this.responseText);
-    }
-  };
-  xhttp.open("GET", "./php/getJsonFromDb/today/today.php", true);
-  xhttp.send();
+window.onload = function() {
+  today();
 }
 
-getTempData();
-  
+// function which does it all for today charts
+function today(range, sensor) {
+    $.get("./php/getJsonFromDb/today/today.php", function(data, status){
+     let convertedData = convertData(JSON.parse(data));
+     createChart(convertData);
+  })
+}
+
+function convertData(data) {
+  let result = {
+    values: [],
+    categories: []
+  }
+for (let i=0; i < data.length; i++) {
+  result.values[i] = data[i].split(",")[0];
+  result.categories[i] = data[i].split(",")[2];
+}
+return result;
+}
+
+function createChart(data) {
+dailyChartDataOptionsTemp.title = "pico";
+}
+
+
+const dailyChartTemp = document.getElementById("dailyChartTemp");
+
   var dailyChartDataOptionsTemp = {
     colors:['#F44336'],
     title: {
+    //  text: 'Graf teploty za posledních 24 hodin',\
       text: 'Graf teploty za posledních 24 hodin',
       align: 'center',
       show: 'false'
@@ -55,15 +53,16 @@ getTempData();
     },
     series: [{
       name: 'Teplota (°C)',
-      data: dailyChartDataTemp.data
+      data: ["188", "511"]
     }],
     xaxis: {
       labels: {
         show: true
     },
-    categories: dailyChartDataTemp.categories
+    categories: []
   }
   }
+
 
 var renderedDailyChartTemp = new ApexCharts(document.querySelector("#dailyChartTemp"), dailyChartDataOptionsTemp);
 renderedDailyChartTemp.render();
