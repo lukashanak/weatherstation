@@ -1,4 +1,4 @@
-
+import {options, createGraph} from './modules/createChartOptions.js';
 
 window.onload = function() {
   today();
@@ -8,7 +8,7 @@ window.onload = function() {
 function today(range, sensor) {
     $.get("./php/getJsonFromDb/today/today.php", function(data, status){
      let convertedData = convertData(JSON.parse(data));
-     createChart(convertData);
+     console.log(createGraph(convertedData.values));
   })
 }
 
@@ -25,44 +25,34 @@ return result;
 }
 
 function createChart(data) {
-dailyChartDataOptionsTemp.title = "pico";
+  var renderedDailyChartTemp = new ApexCharts(document.querySelector("#dailyChartTemp"), options);
+  renderedDailyChartTemp.render();
 }
 
 
+let config = {
+  sensors: ['temp', 'humidity', 'pressure', 'light'],
+  ranges: ['today', 'yesterday', 'lastWeek', 'lastMonth'],
+  todayDOM: {
+    temp: document.getElementById("dailyChartTemp"),
+  },
+  yesterdayDOM: {
+
+  }
+}
+
+
+
+/*
+    tempYesterday: document.getElementById("yesterdayChartTemp"),
+    tempLastWeek: document.getElementById("tempLastWeek")
+*/
+
 const dailyChartTemp = document.getElementById("dailyChartTemp");
 
-  var dailyChartDataOptionsTemp = {
-    colors:['#F44336'],
-    title: {
-    //  text: 'Graf teploty za posledních 24 hodin',\
-      text: 'Graf teploty za posledních 24 hodin',
-      align: 'center',
-      show: 'false'
-    },
-    tools: {
-      download: false
-    },
-    chart: {
-      type:'line',
-      zoom: {
-        enabled: false
-    },
-    toolbar: {
-      show: false
-    }
-    },
-    series: [{
-      name: 'Teplota (°C)',
-      data: ["188", "511"]
-    }],
-    xaxis: {
-      labels: {
-        show: true
-    },
-    categories: []
-  }
-  }
+class Graph {
+  constructor(sensor, range) {
 
+  }
+}
 
-var renderedDailyChartTemp = new ApexCharts(document.querySelector("#dailyChartTemp"), dailyChartDataOptionsTemp);
-renderedDailyChartTemp.render();
