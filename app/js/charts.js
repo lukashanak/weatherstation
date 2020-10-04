@@ -1,4 +1,4 @@
-import {options, createGraph} from './modules/createChartOptions.js';
+import { defaultOptions, createGraph} from './modules/createChartOptions.js';
 
 window.onload = function() {
   today();
@@ -8,7 +8,7 @@ window.onload = function() {
 function today(range, sensor) {
     $.get("./php/getJsonFromDb/today/today.php", function(data, status){
      let convertedData = convertData(JSON.parse(data));
-     console.log(createGraph(convertedData.values));
+     createGraph(convertedData.values);
   })
 }
 
@@ -24,10 +24,6 @@ for (let i=0; i < data.length; i++) {
 return result;
 }
 
-function createChart(data) {
-  var renderedDailyChartTemp = new ApexCharts(document.querySelector("#dailyChartTemp"), options);
-  renderedDailyChartTemp.render();
-}
 
 
 let config = {
@@ -49,10 +45,3 @@ let config = {
 */
 
 const dailyChartTemp = document.getElementById("dailyChartTemp");
-
-class Graph {
-  constructor(sensor, range) {
-
-  }
-}
-

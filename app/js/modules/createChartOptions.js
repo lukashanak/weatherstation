@@ -1,7 +1,7 @@
 
 
 // basic configuration
- export var options = {
+ export var defaultOptions = {
     colors:['#F44336'],
     title: {
       text: 'Graf teploty za posledních 24 hodin',
@@ -32,9 +32,12 @@
   }
   }
 
- export function createGraph(/* DomID,*/ sensorValues) {
-    let basicOptions = options;
-    basicOptions.series.data=sensorValues;
-    return basicOptions;
+ export function createGraph(sensorValues) {
+    let options = defaultOptions;
+    options.series.data=sensorValues;
+    options.categories=sensorValues;
+    console.log(options);
+    var renderedTemp = new ApexCharts(document.querySelector("#dailyChartTemp"), options);
+    renderedTemp.render();
   }
   
