@@ -1,4 +1,64 @@
-import { defaultOptions, createGraph} from './modules/createChartOptions.js';
+const dailyChartTemp = document.getElementById("dailyChartTemp");
+
+// basic configuration
+export const defaultOptions = {
+  colors:['#F44336'],
+  title: {
+    text: 'Graf teploty za posledních 24 hodin',
+    align: 'center',
+    show: 'false'
+  },
+  tools: {
+    download: false
+  },
+  chart: {
+    type:'line',
+    zoom: {
+      enabled: false
+  },
+  toolbar: {
+    show: false
+  }
+  },
+  series: [{
+    name: 'Teplota (°C)',
+    data: []
+  }],
+  xaxis: {
+    labels: {
+      show: true
+  },
+  categories: []
+}
+}
+
+export var sensorValues = ["21.16", "21.05", "20.92", "20.76", "20.62", "20.51", "20.41", "20.46"];
+
+var options = Object.assign({}, defaultOptions);
+options.series.data=sensorValues;
+options.categories=sensorValues;
+
+var renderedTemp = new ApexCharts(document.querySelector("#dailyChartTemp"), options);
+renderedTemp.render();
+
+/*
+export var createGraph = (sensorValues) => {
+  var options = defaultOptions;
+  options.series.data=sensorValues;
+  options.categories=sensorValues;
+  console.log("data appended");
+  console.log(options);
+  var renderedTemp = new ApexCharts(document.querySelector("#dailyChartTemp"), options);
+  renderedTemp.render();
+  console.log(options);
+}
+*/
+
+
+
+
+
+
 
 window.onload = function() {
   today();
@@ -8,7 +68,6 @@ window.onload = function() {
 function today(range, sensor) {
     $.get("./php/getJsonFromDb/today/today.php", function(data, status){
      let convertedData = convertData(JSON.parse(data));
-     createGraph(convertedData.values);
   })
 }
 
@@ -44,4 +103,4 @@ let config = {
     tempLastWeek: document.getElementById("tempLastWeek")
 */
 
-const dailyChartTemp = document.getElementById("dailyChartTemp");
+
