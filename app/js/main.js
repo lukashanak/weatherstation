@@ -3,7 +3,7 @@
 
 
 // TEMPERATURE
-const dailyChartTemp = document.getElementById("dailyChartTemp");
+// const dailyChartTemp = document.getElementById("dailyChartTemp");
 const weeklyChartTemp = document.getElementById("weeklyChartTemp");
 const monthlyChartTemp= document.getElementById("monthlyChartTemp");
 

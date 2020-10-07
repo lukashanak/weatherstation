@@ -23,9 +23,12 @@
           title="Kliknipro zobrazeni na mapě" target="_blank"><i class="fa fa-link" aria-hidden="true"></i></a></p>
     </div>
 
+
+
+
     <div class="container" id="temperature">
       <p class="sub-title text-center">Teplota</p>
-      <p class="actual-value text-center"> <span id="actualValueTemperature">0</span>°C</p>
+      <p class="actual-value text-center"> <span id="actualValueTemp">0</span>°C</p>
       <select class="selection" id="temperatureGraphSelection">
         <option value="dailyChartOptionTemp">Posledních 24h</option>
         <option value="weeklyChartOptionTemp">Posledný týden</option>
@@ -36,7 +39,19 @@
       <div id="monthlyChartTemp"></div>
     </div>
 
-<!--
+
+    
+
+
+
+
+
+
+
+
+
+
+
     <div class="container" id="pressure">
       <p class="sub-title text-center">Atmosférický tlak</p>
       <p class="actual-value text-center"> <span id="actualValuePressure">0</span>hPa</p>
@@ -84,7 +99,6 @@
       <div id="temperatureLightSens">
       </div>
     </div>
-    -->
 
   </div>
   <div class="podekovani">
@@ -98,9 +112,10 @@
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<!-- <script src="./js/main.js"></script> -->
-<script src="./js/updateValues.js"></script>
-<script src="./js/charts.js" type="module"></script>
+<script src="./js/config.js"></script> 
+ <script src="./js/main.js"></script> 
+<script src="./js/modules/UpdateValues.js"></script>
+<script src="./js/modules/CreateCharts.js"></script>
 
 
 </html>
