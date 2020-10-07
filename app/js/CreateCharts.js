@@ -41,19 +41,7 @@ var createGraph = (sensorValues, categories) => {
   rendered.appendData([{
     data: sensorValues
   }]);
-  /*
-  rendered.updateSeries([{
-    xaxis: {
-      categories: sensorValues
-    }
-  }])
-  */
 }
-
-
-
-
-
 
 
 window.onload = function() {
