@@ -23,7 +23,7 @@ function updateActualValue(sensor){
       DOMConfig_UpdateValues[sensor].innerHTML=this.responseText;
     }
   };
-  xhttp.open("GET", "./php/getLastValue/temp.php", true);
+  xhttp.open("GET", `./php/getLastValue/${sensor}.php`, true);
   xhttp.send();
 }
 
