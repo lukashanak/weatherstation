@@ -29,8 +29,8 @@
     <div class="container" id="temperature">
       <p class="sub-title text-center">Teplota</p>
       <p class="actual-value text-center"> <span id="actualValueTemp">0</span>°C</p>
-      <select class="selection" id="temperatureGraphSelection">
-        <option value="dailyChartOptionTemp">Posledních 24h</option>
+      <select class="selection" id="GraphSelection_temperature">
+        <option value="dailyChartOptionTemp">Dnes</option>
         <option value="weeklyChartOptionTemp">Posledný týden</option>
         <option value="monthlyChartOptionTemp">Poslední měsíc</option>
       </select>
@@ -40,22 +40,10 @@
     </div>
 
 
-    
-
-
-
-
-
-
-
-
-
-
-
     <div class="container" id="pressure">
       <p class="sub-title text-center">Atmosférický tlak</p>
       <p class="actual-value text-center"> <span id="actualValuePressure">0</span>hPa</p>
-      <select class="selection" id="pressureGraphSelection">
+      <select class="selection" id="GraphSelection_pressure">
         <option value="day">Posledních 24h</option>
         <option value="week">Posledný týden</option>
         <option value="month">Poslední měsíc</option>
@@ -67,7 +55,7 @@
     <div class="container" id="humidity">
       <p class="sub-title text-center">Vlhkost vzduchu </p>
       <p class="actual-value text-center"> <span id="actualValueHumidity">0-100</span>%</p>
-      <select class="selection" id="humidityGraphSelection">
+      <select class="selection" id="GraphSelection_humidity">
         <option value="day">Posledních 24h</option>
         <option value="week">Posledný týden</option>
         <option value="month">Poslední měsíc</option>
@@ -76,6 +64,7 @@
       </div>
     </div>
 
+    <!-- NOT WORKING YET
     <div class="container" id="rain">
       <p class="sub-title text-center"> Déšť </p>
       <p class="actual-value text-center">Prší: <span id="actualValueRain"> Ano / Ne</span></p>
@@ -87,11 +76,12 @@
       <div id="rainGraph">
       </div>
     </div>
+      -->
 
     <div class="container" id="light-sens">
       <p class="sub-title text-center">Sensitivita světla</p>
-      <p class="actual-value text-center"> <span id="actualValueLightSens">0-1000</span>lx</p>
-      <select class="selection" id="lightSensGraphSelection">
+      <p class="actual-value text-center"> <span id="actualValueLight">0-1000</span>lx</p>
+      <select class="selection" id="GraphSelection_light">
         <option value="day">Posledních 24h</option>
         <option value="week">Posledný týden</option>
         <option value="month">Poslední měsíc</option>
@@ -112,8 +102,8 @@
 
 </script>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<script src="./js/config.js"></script> 
- <script src="./js/main.js"></script> 
+<script src="./js/config.js"></script>
+<script src="./js/modules/SelectChartCategory.js"></script>
 <script src="./js/modules/UpdateValues.js"></script>
 <script src="./js/modules/CreateCharts.js"></script>
 
