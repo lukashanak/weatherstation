@@ -19,7 +19,7 @@ var DOMConfig_UpdateValues = {
 var DOMConfig_GraphSelection = {
   temp: document.getElementById("GraphSelection_temperature"),
   pressure: document.getElementById("GraphSelection_pressure"),
-  humidity: document.getElementById("actualValueHumidity"),
+  humidity: document.getElementById("GraphSelection_humidity"),
   light: document.getElementById("GraphSelection_light")
 }
 

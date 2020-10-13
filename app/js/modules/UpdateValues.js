@@ -21,9 +21,9 @@ function updateActualValue(sensor){
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       DOMConfig_UpdateValues[sensor].innerHTML=this.responseText;
+      console.log();
     }
   };
   xhttp.open("GET", `./php/getLastValue/${sensor}.php`, true);
   xhttp.send();
 }
-
