@@ -25,6 +25,10 @@ var DOMConfig_GraphSelection = {
 
 var DOMConfig_CreateCharts = {
       today: {
+        temp: "tempChartToday",
+        pressure: "pressureChartToday",
+        humidity: "humidityChartToday",
+        light: "lightChartToday"
 
       },
       yesterday: {
