@@ -26,75 +26,66 @@
 
 
 
-    <div class="container" id="temperature">
+    <div class="container" id="temp">
       <p class="sub-title text-center">Teplota</p>
-      <p class="actual-value text-center"> <span id="actualValueTemp">0</span>°C</p>
-      <select class="selection" id="GraphSelection_temperature">
-        <option value="dailyChartOptionTemp">Dnes</option>
-        <option value="weeklyChartOptionTemp">Posledný týden</option>
-        <option value="monthlyChartOptionTemp">Poslední měsíc</option>
+      <p class="actual-value text-center"> <span id="actualValue_temp">0</span>°C</p>
+      <select class="selection" id="GraphSelection_temp">
+        <option value="day">Dnes</option>
+        <option value="yesterday">Vcera</option>
+        <option value="week">Posledný týden</option>
+        <option value="month">Poslední měsíc</option>
       </select>
-      <div id="tempChartToday"></div>
-      <div id="tempChartYesterday"></div>
-      <div id="tempChartLastWeek"></div>
-      <div id="tempChartLastMonth"></div>
+      <div id="dayChart_temp"></div>
+      <div id="yesterdayChart_temp"></div>
+      <div id="weekChart_temp"></div>
+      <div id="monthChart_temp"></div>
     </div>
 
 
     <div class="container" id="pressure">
       <p class="sub-title text-center">Atmosférický tlak</p>
-      <p class="actual-value text-center"> <span id="actualValuePressure">0</span>hPa</p>
+      <p class="actual-value text-center"> <span id="actualValue_pressure">0</span>hPa</p>
       <select class="selection" id="GraphSelection_pressure">
-        <option value="day">Posledních 24h</option>
+        <option value="day">Dnes</option>
+        <option value="yesterday">Vcera</option>
         <option value="week">Posledný týden</option>
         <option value="month">Poslední měsíc</option>
       </select>
-      <div id="pressureChartToday"></div>
-      <div id="pressureChartYesterday"></div>
-      <div id="pressureChartLastWeek"></div>
-      <div id="pressureChartLastMonth"></div>
+      <div id="dayChart_pressure"></div>
+      <div id="yesterdayChart_pressure"></div>
+      <div id="weekChart_pressure"></div>
+      <div id="monthChart_pressure"></div>
     </div>
 
     <div class="container" id="humidity">
       <p class="sub-title text-center">Vlhkost vzduchu </p>
-      <p class="actual-value text-center"> <span id="actualValueHumidity">0-100</span>%</p>
+      <p class="actual-value text-center"> <span id="actualValue_humidity">0-100</span>%</p>
       <select class="selection" id="GraphSelection_humidity">
-        <option value="day">Posledních 24h</option>
+        <option value="day">Dnes</option>
+        <option value="yesterday">Vcera</option>
         <option value="week">Posledný týden</option>
         <option value="month">Poslední měsíc</option>
       </select>
-      <div id="humidityChartToday"></div>
-      <div id="humidityChartYesterday"></div>
-      <div id="humidityChartLastWeek"></div>
-      <div id="humidityChartLastMonth"></div>
+      <div id="dayChart_humidity"></div>
+      <div id="yesterdayChart_humidity"></div>
+      <div id="weekChart_humidity"></div>
+      <div id="monthChart_humidity"></div>
     </div>
 
-    <!-- NOT WORKING YET
-    <div class="container" id="rain">
-      <p class="sub-title text-center"> Déšť </p>
-      <p class="actual-value text-center">Prší: <span id="actualValueRain"> Ano / Ne</span></p>
-      <select class="selection" id="temperatureGraphSelection">
-        <option value="day">Posledních 24h</option>
-        <option value="week">Posledný týden</option>
-        <option value="month">Poslední měsíc</option>
-      </select>
-      <div id="rainGraph">
-      </div>
-    </div>
-      -->
 
-    <div class="container" id="light-sens">
+    <div class="container" id="light">
       <p class="sub-title text-center">Sensitivita světla</p>
-      <p class="actual-value text-center"> <span id="actualValueLight">0-1000</span>lx</p>
+      <p class="actual-value text-center"> <span id="actualValue_light">0-1000</span>lx</p>
       <select class="selection" id="GraphSelection_light">
-        <option value="day">Posledních 24h</option>
+        <option value="day">Dnes</option>
+        <option value="yesterday">Vcera</option>
         <option value="week">Posledný týden</option>
         <option value="month">Poslední měsíc</option>
       </select>
-      <div id="lightChartToday"></div>
-      <div id="lightChartYesterday"></div>
-      <div id="lightChartLastWeek"></div>
-      <div id="lightChartLastMonth"></div>
+      <div id="dayChart_light"></div>
+      <div id="yesterdayChart_light"></div>
+      <div id="weekChart_light"></div>
+      <div id="monthChart_light"></div>
     </div>
 
   </div>
