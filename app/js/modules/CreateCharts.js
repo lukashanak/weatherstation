@@ -30,47 +30,13 @@ const defaultOptions = {
   }
 }
 
-// DOM Config - where to inject charts
-var DOMConfig_CreateCharts = {
-      today: {
-        temp: "dayChart_temp",
-        pressure: "dayChart_pressure",
-        humidity: "dayChart_humidity",
-        light: "dayChart_light"
-      },
-      yesterday: {
-        temp: "yesterdayChart_temp",
-        pressure: "yesterdayChart_pressure",
-        humidity: "yesterdayChart_humidity",
-        light: "yesterdayChart_light"
-      },
-      lastWeek: {
-        temp: "weekChart_temp",
-        pressure: "weekChart_pressure",
-        humidity: "weekChart_humidity",
-        light: "weekChart_light"
-      },
-      lastMonth: {
-        temp: "monthChart_temp",
-        pressure: "monthChart_pressure",
-        humidity: "monthChart_humidity",
-        light: "monthChart_light"
-      }
-  }
-
-
-// 📁 sayHi.js
-export function sayHi(user) {
-  alert(`Hello, ${user}!`);
-}
-
 
 // function which does it all
-export function renderChart(timeRange, sensorType, ) {
+export function renderChart(timeRange, sensorType, domID) {
   $.get(`./php/getJsonFromDb/${timeRange}/${sensorType}.php`, function (data, status) {
     let convertedData = convertData(JSON.parse(data));
     // not the problem here, working right:   console.log(convertedData.categories.length + " = " + convertedData.values.length);
-    createChart(convertedData.values, convertedData.categories, timeRange, sensorType);
+    createChart(convertedData.values, convertedData.categories, timeRange, sensorType, domID);
   })
 }
 
@@ -85,15 +51,13 @@ function convertData(data) {
   for (let i = 0; i < data.length; i++) {
     result.values[i] = data[i].split(",")[0];
     result.categories[i] = data[i].split(",")[2];
-    console.log(result.categories[i]);
   }
   return result;
 }
 
 // Create a chart
-function createChart(sensorValues, categories, timeRange, sensorType) {
-  let whereToInjectChartID = DOMConfig_CreateCharts[timeRange][sensorType];
-  console.log(whereToInjectChartID);
+function createChart(sensorValues, categories, timeRange, sensorType, domID) {
+  let whereToInjectChartID = domID;
   //  let options = Object.assign({}, defaultOptions);
   let options = JSON.parse(JSON.stringify(defaultOptions));
   options.xaxis.categories = categories;
