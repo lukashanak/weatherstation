@@ -1,26 +1,6 @@
 <?php
 require '../../config/connectPernamentDb.php';
 
-$date = date('Y-m-d');
-$result = mysqli_query($conn,"SELECT value, time, date FROM `humidity` WHERE date = '".$date."' ");
-
-$tempToday = array();
-
-if ($result->num_rows > 0) {
-  $i = 0;
-    while($row = $result->fetch_assoc()) {
-      $tempToday[$i] = ($row["value"] . ", " . $row["date"] . ", " . $row["time"]);
-      $i++;
-    }
-  }
-echo json_encode($tempToday);
-
-$conn->close();
-
-?>
-<?php
-require '../../config/connectPernamentDb.php';
-
 $date = date('Y-m-d', strtotime("-1 days"));
 $result = mysqli_query($conn,"SELECT value, time, date FROM `humidity` WHERE date = '".$date."' ");
 
@@ -36,5 +16,7 @@ if ($result->num_rows > 0) {
 echo json_encode($tempToday);
 
 $conn->close();
+
+$date = date('Y-m-d', strtotime("-1 days"));
 
 ?>
