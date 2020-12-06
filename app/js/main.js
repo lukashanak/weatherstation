@@ -1,7 +1,8 @@
 import {renderChart} from './modules/CreateCharts.js'
 
 
-var DOMConfig_CreateCharts = {
+// ID of HTML elements for showing graphs
+const DOMConfig_CreateCharts = {
     today: {
       temp: "dayChart_temp",
       pressure: "dayChart_pressure",
@@ -28,9 +29,12 @@ var DOMConfig_CreateCharts = {
     }
 }
 
+// render charts on loadout
 renderChart("yesterday","temp", DOMConfig_CreateCharts.today.temp);
+renderChart("lastWeek","temp", DOMConfig_CreateCharts.lastWeek.temp);
+
 /*
-renderChart("yesterday", "pressure");
-renderChart("yesterday","humidity");
-renderChart("yesterday","light");
+renderChart("yesterday", "pressure", DOMConfig_CreateCharts.today.pressure);
+renderChart("yesterday","humidity", DOMConfig_CreateCharts.today.humidity);
+renderChart("yesterday","light", DOMConfig_CreateCharts.today.light);
 */

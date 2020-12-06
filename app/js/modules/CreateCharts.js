@@ -40,7 +40,7 @@ export function renderChart(timeRange, sensorType, domID) {
   })
 }
 
-// sub functions
+/* ********   sub functions ********** */
 
 // Convert data from DB's array into the structured object
 function convertData(data) {

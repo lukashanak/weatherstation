@@ -35,10 +35,12 @@
         <option value="week">Posledný týden</option>
         <option value="month">Poslední měsíc</option>
       </select>
-      <div id="dayChart_temp"></div>
-      <div id="yesterdayChart_temp"></div>
-      <div id="weekChart_temp"></div>
-      <div id="monthChart_temp"></div>
+      <div id="GraphOutput_temp"> 
+        <div id="dayChart_temp"></div>
+        <div id="yesterdayChart_temp"></div>
+        <div id="weekChart_temp"></div>
+        <div id="monthChart_temp"></div>
+      </div>
     </div>
 
 
@@ -51,10 +53,12 @@
         <option value="week">Posledný týden</option>
         <option value="month">Poslední měsíc</option>
       </select>
-      <div id="dayChart_pressure"></div>
-      <div id="yesterdayChart_pressure"></div>
-      <div id="weekChart_pressure"></div>
-      <div id="monthChart_pressure"></div>
+      <div class="chart-output">
+        <div id="dayChart_pressure"></div>
+        <div id="yesterdayChart_pressure"></div>
+        <div id="weekChart_pressure"></div>
+        <div id="monthChart_pressure"></div>
+    </div>
     </div>
 
     <div class="container" id="humidity">
@@ -102,7 +106,7 @@
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
 <script src="./js/config.js"></script>
 <script src="./js/modules/UpdateValues.js"></script>
-<!-- <script src="./js/modules/SelectChartCategory.js"></script> -->
+<script src="./js/modules/SelectChartCategory.js"></script>
 <script src="./js/modules/CreateCharts.js"></script> 
 <script type="module" src="./js/main.js"> </script>
 

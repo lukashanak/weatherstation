@@ -1,12 +1,20 @@
 
+function switchChartCategory(selectList, outputList) {
+  let selectListChilds = selectList.children;
+  let outputListChilds = outputList.children;
+  
+  for (child of selectListChilds) {
+    console.log(child);
+  }
+}
 
+switchChartCategory(document.getElementById("GraphSelection_temp"), document.getElementById("GraphOutput_temp"));
 
-
+/*
 // TEMPERATURE
-// const dailyChartTemp = document.getElementById("dailyChartTemp");
+const dailyChartTemp = document.getElementById("dailyChartTemp");
 const weeklyChartTemp = document.getElementById("weeklyChartTemp");
 const monthlyChartTemp= document.getElementById("monthlyChartTemp");
-
 const temperatureGraphSelection = document.querySelector('#GraphSelection_temperature');
 
 temperatureGraphSelection.addEventListener('change', (event) => {
@@ -27,5 +35,4 @@ temperatureGraphSelection.addEventListener('change', (event) => {
     monthlyChartTemp.style.display="block";
   }
 });
-
-// RAIN
+*/
