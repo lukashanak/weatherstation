@@ -1,4 +1,10 @@
 
+var DOMConfig_UpdateValues = {
+  temp: document.getElementById("actualValue_temp"),
+  pressure: document.getElementById("actualValue_pressure"),
+  humidity: document.getElementById("actualValue_humidity"),
+  light: document.getElementById("actualValue_light"),
+}
 
 //onload
 updateActualValue("temp");
