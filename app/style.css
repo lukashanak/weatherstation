@@ -99,3 +99,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.hidden-element {
+  display: none;
+}

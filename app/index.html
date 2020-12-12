@@ -30,16 +30,16 @@
       <p class="sub-title text-center">Teplota</p>
       <p class="actual-value text-center"> <span id="actualValue_temp">0</span>°C</p>
       <select class="selection" id="GraphSelection_temp">
-        <option value="day">Dnes</option>
-        <option value="yesterday">Vcera</option>
-        <option value="week">Posledný týden</option>
-        <option value="month">Poslední měsíc</option>
+        <option value="0" id="day_temp" class="chart">Dnes</option>
+        <option value="1" id="yesterday_temp" class="chart">Vcera</option>
+        <option value="2" id="week_temp" class="chart">Posledný týden</option>
+        <option value="3" id="month_temp" class="chart">Poslední měsíc</option>
       </select>
-      <div id="GraphOutput_temp"> 
-        <div id="dayChart_temp"></div>
-        <div id="yesterdayChart_temp"></div>
-        <div id="weekChart_temp"></div>
-        <div id="monthChart_temp"></div>
+      <div class="graph-showroom" id="GraphShowroom_temp">
+        <div id="dayChart_temp" class="chart"></div>
+        <div id="yesterdayChart_temp" class="chart"></div>
+        <div id="weekChart_temp" class="chart"></div>
+        <div id="monthChart_temp" class="chart"></div>
       </div>
     </div>
 
@@ -48,16 +48,16 @@
       <p class="sub-title text-center">Atmosférický tlak</p>
       <p class="actual-value text-center"> <span id="actualValue_pressure">0</span>hPa</p>
       <select class="selection" id="GraphSelection_pressure">
-        <option value="day">Dnes</option>
-        <option value="yesterday">Vcera</option>
-        <option value="week">Posledný týden</option>
-        <option value="month">Poslední měsíc</option>
+        <option value="0" class="chart">Dnes</option>
+        <option value="1" class="chart">Vcera</option>
+        <option value="2" class="chart">Posledný týden</option>
+        <option value="3" class="chart">Poslední měsíc</option>
       </select>
-      <div class="chart-output">
-        <div id="dayChart_pressure"></div>
-        <div id="yesterdayChart_pressure"></div>
-        <div id="weekChart_pressure"></div>
-        <div id="monthChart_pressure"></div>
+      <div class="graph-showroom" id="GraphShowroom_pressure">
+        <div id="dayChart_pressure" class="chart"></div>
+        <div id="yesterdayChart_pressure" class="chart"></div>
+        <div id="weekChart_pressure" class="chart"></div>
+        <div id="monthChart_pressure" class="chart"></div>
     </div>
     </div>
 
@@ -65,15 +65,17 @@
       <p class="sub-title text-center">Vlhkost vzduchu </p>
       <p class="actual-value text-center"> <span id="actualValue_humidity">0-100</span>%</p>
       <select class="selection" id="GraphSelection_humidity">
-        <option value="day">Dnes</option>
-        <option value="yesterday">Vcera</option>
-        <option value="week">Posledný týden</option>
-        <option value="month">Poslední měsíc</option>
+        <option value="0">Dnes</option>
+        <option value="1">Vcera</option>
+        <option value="2">Posledný týden</option>
+        <option value="3">Poslední měsíc</option>
       </select>
-      <div id="dayChart_humidity"></div>
-      <div id="yesterdayChart_humidity"></div>
-      <div id="weekChart_humidity"></div>
-      <div id="monthChart_humidity"></div>
+      <div class="graph-showroom">
+        <div id="dayChart_humidity"></div>
+        <div id="yesterdayChart_humidity"></div>
+        <div id="weekChart_humidity"></div>
+        <div id="monthChart_humidity"></div>
+      </div>
     </div>
 
 
@@ -81,15 +83,17 @@
       <p class="sub-title text-center">Sensitivita světla</p>
       <p class="actual-value text-center"> <span id="actualValue_light">0-1000</span>lx</p>
       <select class="selection" id="GraphSelection_light">
-        <option value="day">Dnes</option>
-        <option value="yesterday">Vcera</option>
-        <option value="week">Posledný týden</option>
-        <option value="month">Poslední měsíc</option>
+        <option value="0">Dnes</option>
+        <option value="1">Vcera</option>
+        <option value="2">Posledný týden</option>
+        <option value="3">Poslední měsíc</option>
       </select>
-      <div id="dayChart_light"></div>
-      <div id="yesterdayChart_light"></div>
-      <div id="weekChart_light"></div>
-      <div id="monthChart_light"></div>
+      <div class="graph-showroom">
+          <div id="dayChart_light" class="chart"></div>
+          <div id="yesterdayChart_light" class="chart"></div>
+          <div id="weekChart_light" class="chart"></div>
+          <div id="monthChart_light" class="chart"></div>
+      </div>
     </div>
 
   </div>
@@ -103,11 +107,11 @@
 
 
 </script>
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> 
-<script src="./js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="./js/modules/UpdateValues.js"></script>
-<script src="./js/modules/SelectChartCategory.js"></script>
-<script src="./js/modules/CreateCharts.js"></script> 
+<script src="./js/modules/CreateCharts.js"></script>
+<script src="./js/modules/addClassToEveryChildOfDiv.js"></script>
 <script type="module" src="./js/main.js"> </script>
+<script type="module" src="./js/modules/graphSwitching.js"></script>
 
 </html>
