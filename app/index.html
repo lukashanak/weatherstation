@@ -37,9 +37,9 @@
       </select>
       <div class="graph-showroom" id="GraphShowroom_temp">
         <div id="dayChart_temp" class="chart"></div>
-        <div id="yesterdayChart_temp" class="chart"></div>
-        <div id="weekChart_temp" class="chart"></div>
-        <div id="monthChart_temp" class="chart"></div>
+        <div id="yesterdayChart_temp" class="chart hidden-element"></div>
+        <div id="weekChart_temp" class="chart hidden-element"></div>
+        <div id="monthChart_temp" class="chart hidden-element"></div>
       </div>
     </div>
 
@@ -55,9 +55,9 @@
       </select>
       <div class="graph-showroom" id="GraphShowroom_pressure">
         <div id="dayChart_pressure" class="chart"></div>
-        <div id="yesterdayChart_pressure" class="chart"></div>
-        <div id="weekChart_pressure" class="chart"></div>
-        <div id="monthChart_pressure" class="chart"></div>
+        <div id="yesterdayChart_pressure" class="chart hidden-element"></div>
+        <div id="weekChart_pressure" class="chart hidden-element"></div>
+        <div id="monthChart_pressure" class="chart hidden-element"></div>
     </div>
     </div>
 
@@ -71,10 +71,10 @@
         <option value="3">Poslední měsíc</option>
       </select>
       <div class="graph-showroom">
-        <div id="dayChart_humidity"></div>
-        <div id="yesterdayChart_humidity"></div>
-        <div id="weekChart_humidity"></div>
-        <div id="monthChart_humidity"></div>
+        <div id="dayChart_humidity" class="chart"></div>
+        <div id="yesterdayChart_humidity" class="chart hidden-element"></div>
+        <div id="weekChart_humidity" class="chart hidden-element"></div>
+        <div id="monthChart_humidity" class="chart hidden-element"></div>
       </div>
     </div>
 
@@ -90,9 +90,9 @@
       </select>
       <div class="graph-showroom">
           <div id="dayChart_light" class="chart"></div>
-          <div id="yesterdayChart_light" class="chart"></div>
-          <div id="weekChart_light" class="chart"></div>
-          <div id="monthChart_light" class="chart"></div>
+          <div id="yesterdayChart_light" class="chart hidden-element"></div>
+          <div id="weekChart_light" class="chart hidden-element"></div>
+          <div id="monthChart_light" class="chart hidden-element"></div>
       </div>
     </div>
 
@@ -110,7 +110,6 @@
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="./js/modules/UpdateValues.js"></script>
 <script src="./js/modules/CreateCharts.js"></script>
-<script src="./js/modules/addClassToEveryChildOfDiv.js"></script>
 <script type="module" src="./js/main.js"> </script>
 <script type="module" src="./js/modules/graphSwitching.js"></script>
 

@@ -30,6 +30,7 @@ const defaultOptions = {
   }
 }
 
+
 // function which does it all
 export function renderChart(timeRange, sensorType, domID) {
   $.get(`./php/getJsonFromDb/${timeRange}/${sensorType}.php`, function (data, status) {
@@ -37,14 +38,6 @@ export function renderChart(timeRange, sensorType, domID) {
     // not the problem here, working right:   console.log(convertedData.categories.length + " = " + convertedData.values.length);
     createChart(convertedData.values, convertedData.categories, timeRange, sensorType, domID);
     console.log("Chart created");
-    let hasChildren = false;
-    while(hasChildren === true) {
-      if(document.getElementById(domID).hasChildNodes === true) {
-        hasChildren = true;
-        document.getElementById(domID).classList.add("hidden-element");
-        console.log("chart hidden");
-      }
-    }
   })
 }
 
