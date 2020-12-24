@@ -9,7 +9,9 @@ $tempToday = array();
 if ($result->num_rows > 0) {
   $i = 0;
     while($row = $result->fetch_assoc()) {
-      $tempToday[$i] = ($row["value"] . ", " . $row["date"] . ", " . $row["time"]);
+      $x = explode(":", $row["time"]);
+      $time = $x[0] . "h.";
+      $tempToday[$i] = ($row["value"] . ", " . $row["date"] . ", " . $time);
       $i++;
     }
   }

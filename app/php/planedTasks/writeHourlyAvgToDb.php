@@ -39,7 +39,7 @@ $temp_avg_value = round(getHourlyAvg('temp'),2);
 $humidity_avg_value = round(getHourlyAvg('humidity'),2);
 $pressure_avg_value = round(getHourlyAvg('pressure'),2);
 $light_avg_value = round(getHourlyAvg('light'),2);
-// $isRaining_avg_value is missing because it doesn't yet
+// $isRaining_avg_value is missing because it doesn't work yet
 
 //$time = (date("H")) . ":00:00";
 $time = (date("H")) . ":00:00";

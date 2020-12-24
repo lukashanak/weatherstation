@@ -23,17 +23,17 @@ const defaultOptions = {
     data: [] //["20.49", "19.95", "19.64", "19.28", "18.96", "18.7", "18.82", "19.13",]
   }],
   xaxis: {
+    type: 'category',
+    categories: [], //["00:00:00", " 01:00:00", " 02:00:00", " 03:00:00", " 04:00:00", " 05:00:00", " 06:00:00", " 07:00:00"]
     labels: {
-      show: true
-    },
-    categories: [] //["00:00:00", " 01:00:00", " 02:00:00", " 03:00:00", " 04:00:00", " 05:00:00", " 06:00:00", " 07:00:00"]
-  }
+      show: false
+    }
+  },
 }
-
 
 // function which does it all
 export function renderChart(timeRange, sensorType, domID) {
-  $.get(`./php/getJsonFromDb/${timeRange}/${sensorType}.php`, function (data, status) {
+  $.get(`./php/getJsonFromDb/${category}/${sensorType}.php`, function (data, status) {
     let convertedData = convertData(JSON.parse(data));
     // not the problem here, working right:   console.log(convertedData.categories.length + " = " + convertedData.values.length);
     createChart(convertedData.values, convertedData.categories, timeRange, sensorType, domID);
@@ -57,15 +57,16 @@ function convertData(data) {
 }
 
 // Create a chart
-function createChart(sensorValues, categories, timeRange, sensorType, domID) {
+function createChart(sensorValues, categories, dateRange, sensorType, domID) {
   let whereToInjectChartID = domID;
   //  let options = Object.assign({}, defaultOptions);
   let options = JSON.parse(JSON.stringify(defaultOptions));
   options.xaxis.categories = categories;
   options.series.data = sensorValues;
-  window[timeRange + sensorType] = new ApexCharts(document.querySelector("#" + whereToInjectChartID), options);
-  window[timeRange + sensorType].render();
-  window[timeRange + sensorType].appendData([{
+  if (categories )
+  window[dateRange + sensorType] = new ApexCharts(document.querySelector("#" + whereToInjectChartID), options);
+  window[dateRange + sensorType].render();
+  window[dateRange + sensorType].appendData([{
     data: sensorValues
   }]);
 }

@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
   $i = 0;
     while($row = $result->fetch_assoc()) {
       $x = explode(":", $row["time"]);
-      $time = $x[0] . ":"  . $x[1];
+      $time = $x[0] . "h.";
       $tempToday[$i] = ($row["value"] . ", " . $row["date"] . ", " . $time);
       $i++;
     }
