@@ -1,10 +1,11 @@
 # Weather Station using Raspberry Pi and Arduino UNO
 
+<!-- 
 ## Table of Content
 - [What the project does](#What-the-project-does)
 - What hardware and technologies did I use
 - Final conclusions
-
+!-->
 
 ## What the project does
 1. It takes the data from the sensors (temperature, pressure etc.)
