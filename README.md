@@ -1,9 +1,9 @@
 # Weather Station using Raspberry Pi and Arduino UNO
 
 ## Table of Content
-What the project does
-What hardware and technologies did I use
-Final conclusions
+- [What the project does](#What-the-project-does)
+- What hardware and technologies did I use
+- Final conclusions
 
 
 ## What the project does
@@ -24,7 +24,5 @@ Final conclusions
 
 
 ## Final conclusions
-I really enjoyed making this project. Anyway, I learned a lot. I worked with many technologies and faced many challenges. The project isn't perfect. I would do many things differently now.
-
-
+I really enjoyed making this project. It was fun to work with so many technologies and face so many challenges. I learned a lot.
 
