@@ -10,7 +10,7 @@
 ## How does project work
 1. There are many sensors connected to either Raspberry Pi or Arduino UNO. Those sensors are listening to the real world (temperature, humidity, pressure etc.)
 2. Everything is being saved in the MySQL database every 3 seconds.
-4. Data from the MySQL database are shown in the website. Real time values and daily/weekly/monthly charts. You can see how it looks like here: https://imgur.com/70b95a10-ecb9-44f5-93d5-6a17e86cb4c1
+4. Data from the MySQL database are shown in the website. Real time values and daily/weekly/monthly charts. You can see how it looks like here: https://i.imgur.com/yXEnd5l.png
 
 ## What hardware and technologies did I use
 1. Raspberry Pi 4 for running the server && taking data from sensors 
