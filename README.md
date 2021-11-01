@@ -7,11 +7,10 @@
 - Final conclusions
 !-->
 
-## What the project does
-1. It takes the data from the sensors (temperature, pressure etc.)
-2. It's send those data into the Arduino UNO / Raspberry PI
-3. It's saving those data into the MySQL database and manipulating those data using PHP
-4. It's showing those data from the MySQL database in the website. Actual values, daily/weekly/monthly charts.
+## How does project work
+1. There are many sensors connected to either Raspberry Pi or Arduino UNO. Those sensors are listening to the real world (temperature, humidity, pressure etc.)
+2. Everything is being saved in the MySQL database every 3 seconds.
+4. Data from the MySQL database are shown in the website. Real time values and daily/weekly/monthly charts. You can see how it looks like here: https://imgur.com/70b95a10-ecb9-44f5-93d5-6a17e86cb4c1
 
 ## What hardware and technologies did I use
 1. Raspberry Pi 4 for running the server && taking data from sensors 
